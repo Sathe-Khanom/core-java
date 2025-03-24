@@ -1,6 +1,8 @@
 
 package first.pkgclass;
 
+import java.util.Scanner;
+
 
 public class FirstClass {
 
@@ -27,6 +29,12 @@ public class FirstClass {
         System.out.println("This status is "+ roll);
         System.out.println("This status is "+ id);
         System.out.println("This status is "+ number);
+        
+        
+         Scanner input = new Scanner(System.in);
+        System.out.println("enter name");
+        String rahmat = input.nextLine();
+        System.out.println("My name " + rahmat);
     }
     
   

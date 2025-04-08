@@ -71,21 +71,21 @@ public class HomeWork1 {
 
 //question no-5 (vowel/consonant check)
 
-//        System.out.println("Enter a letter to check vowel or consonant");
-//        char input = s.next().toUpperCase().charAt(0);
-//
-//if (input == 'A' || input == 'E' || input == 'I' || input == 'O' || input == 'U' ){
-//    
-//    System.out.println(input + " is the vowel");
-//}
-//else if(input >= 'A' && input <= 'Z'){
-//    System.out.println(input + " is consonant");
-//}
-//else{
-//    System.out.println("Not a valid letter");
-//}  
-//    }
-//    }
+        System.out.println("Enter a letter to check vowel or consonant");
+        char input = s.next().toUpperCase().charAt(0);
+
+if (input == 'A' || input == 'E' || input == 'I' || input == 'O' || input == 'U' ){
+    
+    System.out.println(input + " is the vowel");
+}
+else if(input >= 'A' && input <= 'Z'){
+    System.out.println(input + " is consonant");
+}
+else{
+    System.out.println("Not a valid letter");
+}  
+    }
+    }
 
 //question no-6 (grading)
 

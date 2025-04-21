@@ -9,7 +9,7 @@ public class BubbleSort {
 
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Enter Array Size");
+        System.out.println("Enter Array Limit");
         int size = s.nextInt();
 
         int[] array = new int[size];
@@ -22,7 +22,7 @@ public class BubbleSort {
 
         }
         System.out.println("-------");
-        System.out.println("Before Sorting" + Arrays.toString(array));
+        System.out.println("Arrays are" + Arrays.toString(array));
 
         for (int round = 0; round < array.length - 1; round++) {
             for (int step = 0; step < array.length - round - 1; step++) {
@@ -33,7 +33,7 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println("After Sorting" + Arrays.toString(array));
+        System.out.println("After Sort" + Arrays.toString(array));
     }
 
 }

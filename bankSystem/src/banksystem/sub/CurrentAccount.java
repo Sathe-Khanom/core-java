@@ -12,6 +12,7 @@ public class CurrentAccount extends banksystem.sup.Account{
     public CurrentAccount(double overDraftLimit) {
         this.overDraftLimit = overDraftLimit;
     }
+    
 
     public double getOverDraftLimit() {
         return overDraftLimit;
@@ -20,20 +21,35 @@ public class CurrentAccount extends banksystem.sup.Account{
     public void setOverDraftLimit(double overDraftLimit) {
         this.overDraftLimit = overDraftLimit;
     }
+
+    public CurrentAccount(double overDraftLimit, int accountNumber, double balance) {
+        super(accountNumber, balance);
+        this.overDraftLimit = overDraftLimit;
+    }
+    
     
     @Override
-    public void withdraw(){
+    public void withdraw(double amount){
+   double balance = getBalance();
+   
+   if(amount > 0 && balance >= amount){
 
-    super.withdraw();
-        System.out.println("Withdraw : " + overDraftLimit);
+balance -= amount;
+    System.out.println(amount + "withdrawn successfully");
+        
+}
+
+else{
+    System.out.println("Insufficient balance");
+}
+    
     
 }
     @Override
     public void accountDetails(){
 
  super.accountDetails();
-        System.out.println("Withdraw : " + overDraftLimit);
-        System.out.println("Current Balance : " + (super.getBalance() - overDraftLimit) );
+        System.out.println("Overdraft Limit : " + overDraftLimit);
 }
     
 }

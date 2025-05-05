@@ -31,20 +31,27 @@ public class Account {
 
     public void deposit(double amount) {
         if (amount > 0) {
-            amount += balance;
-            System.out.println("New Balance : " + amount);
+            balance += amount;
+            System.out.println( amount + "   deposited successfully " );
         } else {
-            System.out.println(balance);
+            System.out.println("Invalid deposit amount");
         }
-        System.out.println("Account Number : " + accountNumber);
-        System.out.println("Balance : " + balance);
 
     }
 
-    public void withdraw() {
+    public void withdraw(double amount) {
 
-        System.out.println("Account Number : " + accountNumber);
-        System.out.println("Balance : " + balance);
+if(amount > 0 && balance >= amount){
+
+balance -= amount;
+    System.out.println(amount + "withdrawn successfully");
+        
+}
+
+else{
+    System.out.println("Insufficient balance");
+}
+
     }
 
     public void accountDetails() {

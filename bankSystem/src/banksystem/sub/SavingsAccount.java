@@ -4,24 +4,30 @@ package banksystem.sub;
 
 public class SavingsAccount extends banksystem.sup.Account {
     
-   float interestRate;
+  double interestRate;
 
     public SavingsAccount() {
     }
 
-    public SavingsAccount(float interestRate) {
+    public SavingsAccount(double interestRate) {
         this.interestRate = interestRate;
     }
 
-    public float getInterestRate() {
-        return interestRate;
+    public double getInterestRate() {
+        return (double) interestRate;
     }
 
-    public void setInterestRate(float interestRate) {
+    public void setInterestRate(double interestRate) {
         this.interestRate = interestRate;
     }
+
+    public SavingsAccount(double interestRate, int accountNumber, double balance) {
+        super(accountNumber, balance);
+        this.interestRate = interestRate;
+    }
+    
+    
    
-   @Override
    public void deposit(){
 
    super.deposit();

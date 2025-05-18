@@ -1,4 +1,4 @@
-package solvingbuildingproblem;
+ package solvingbuildingproblem;
 
 public class SolvingBuildingProblem {
 

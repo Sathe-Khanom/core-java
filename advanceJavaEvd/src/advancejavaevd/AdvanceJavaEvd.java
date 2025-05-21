@@ -111,7 +111,8 @@ public class AdvanceJavaEvd {
 
     public static void updateEmp(String name, String email, float salary, int id) {
 
-        sql = "update employee set Name=?, Email=?, Salary=? where ID=?";
+        sql = "update employee set Name=?, Email=?, Salary=?"
+                + " where ID=?";
 
         try {
             ps = du.getCon().prepareStatement(sql);

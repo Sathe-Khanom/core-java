@@ -14,29 +14,37 @@ public class CrudPractise {
     static String sql = "";
 
     public static void main(String[] args) {
-        
+
         saveCustomer("Lamia", "jigatola", "2165479624", "lamia@gmail.com");
         System.out.println("After Save");
-        
+
         showAllCustomer();
         System.out.println("---------------------");
-        
-        
-        
+
+        deleteCustomer(2);
+        System.out.println("----");
+        showAllCustomer();
+        System.out.println("---------------------");
+
+        updateCustomer("rahim", "rtgmu", "5454414", "fdgrfh", 1);
+        System.out.println("ghgfh");
+
+        showAllCustomer();
+        System.out.println("---------------------");
 
     }
 
     public static void saveCustomer(String name, String address, String contact, String email) {
 
-        sql = "insert into customer's detail (Name, Address, Contact no., Email) values (?,?,?,?)";
+        sql = "insert into customer(Name, Address, ContactNo, Email) values (?,?,?,?)";
 
         try {
             ps = db.getCon().prepareStatement(sql);
 
-            ps.setString(1, "name");
-            ps.setString(2, "address");
-            ps.setString(3, "contact");
-            ps.setString(4, "email");
+            ps.setString(1, name);
+            ps.setString(2, address);
+            ps.setString(3, contact);
+            ps.setString(4, email);
 
             ps.executeUpdate();
 
@@ -54,7 +62,7 @@ public class CrudPractise {
 
     public static void showAllCustomer() {
 
-        sql = "select * from customer's detail";
+        sql = "select * from customer";
 
         try {
             ps = db.getCon().prepareStatement(sql);
@@ -65,50 +73,49 @@ public class CrudPractise {
 
                 String name = rs.getString("Name");
                 String address = rs.getString("Address");
-                String contact = rs.getString("Contact");
+                String contact = rs.getString("ContactNo");
                 String email = rs.getString("Email");
                 int id = rs.getInt("ID");
-                
-                System.out.println("ID: " + id +" " + "Name: " + name + " " + "Address" + address + " "+ "Contact: " +  contact + " " + "Email" + email);
+
+                System.out.println("ID: " + id + " " + "Name: " + name + " " + "Address" + address + " " + "Contact: " + contact + " " + "Email" + email);
 
             }
             rs.close();
             ps.close();
             db.getCon().close();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(CrudPractise.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public static void deleteCustomer(int id) {
-        
-       sql = "delete from customer's detail where id = ?";
-       
+
+        sql = "delete from customer where id = ?";
+
         try {
             ps = db.getCon().prepareStatement(sql);
-            
+
             ps.setInt(1, id);
             ps.executeUpdate();
-            
+
             ps.close();
             db.getCon().close();
-            
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(CrudPractise.class.getName()).log(Level.SEVERE, null, ex);
         }
-  
-        
-        
-        
+
     }
 
     public static void updateCustomer(String name, String address, String contact, String email, int id) {
         
+         sql = "update customer set Name=?, Email=?, Salary=?"
+                + " where ID=?";
+
         try {
             ps = db.getCon().prepareStatement(sql);
-            
+
             ps.setString(1, name);
             ps.setString(2, address);
             ps.setString(3, contact);
@@ -119,13 +126,11 @@ public class CrudPractise {
 
             ps.close();
             db.getCon().close();
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(CrudPractise.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-            
-        
     }
 
 }

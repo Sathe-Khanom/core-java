@@ -14,29 +14,23 @@ public class CrudLearn {
     static String sql = "";
 
     public static void main(String[] args) {
-        
-        saveChild("rahim",20, "badda","434545", "rahima");
-        System.out.println("After Save");
+
+        saveChild("Atiq", 9, "Mohammadpur", "434545", "Sohel");
+        System.out.println("-------- After Save ---------");
 
         showAllChild();
-        System.out.println("---------------------");
+//        System.out.println("---------------------");
 
-        deleteChild(2);
-       System.out.println("After Delete");
-        showAllChild();
-        System.out.println("---------------------");
-
-        updateCustomer("sathe", 10, "dhanmondi", "325436", "khadija", 5);
-        System.out.println("After Update");
+        updateCustomer("Rahim", 12, "Rayerbazar", "641365", "Muladi", 2);
+        System.out.println("--------- After Update -------------");
 
         showAllChild();
-        System.out.println("---------------------");
-    
-        
-        
-        
-        
-        
+//        System.out.println("---------------------");
+
+        deleteChild(3);
+        System.out.println("------- After Delete --------");
+        showAllChild();
+//        System.out.println("---------------------");
 
     }
 
@@ -59,9 +53,8 @@ public class CrudLearn {
             ps.close();
             du.getCon().close();
 
-            System.out.println("Data Save");
-            System.out.println("---------------------------");
-
+//            System.out.println("Data Save");
+//            System.out.println("---------------------------");
         } catch (SQLException ex) {
             Logger.getLogger(CrudLearn.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -86,7 +79,7 @@ public class CrudLearn {
                 String guardianName = rs.getString("guardianName");
                 int id = rs.getInt("id");
 
-                System.out.println("ID: " + id + " " + "Name: " + name + " " + "Age: " + age + " " + "Address: " + address + " " + "Contact: " + contact + " " + "GuardianName: " + guardianName);
+                System.out.println("ID: " + id + " " + "Name: " + name + ", " + "Age: " + age + ", " + "Address: " + address + ", " + "Contact: " + contact + ", " + "GuardianName: " + guardianName);
 
             }
             rs.close();
